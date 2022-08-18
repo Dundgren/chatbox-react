@@ -41,6 +41,12 @@ export default function LoginForm({setUserData}) {
         });
     }
 
+    function keyDownHandler(event) {
+        if (event.code === "Enter") {
+            login()
+        }
+    }
+
     return (
         <>
             <p className="error-message">{ errorMessage }</p>
@@ -52,7 +58,8 @@ export default function LoginForm({setUserData}) {
                     id="login-username-input"
                     name="username"
                     value={loginFormData.username}
-                    onChange={handleChange} 
+                    onChange={handleChange}
+                    onKeyDown={keyDownHandler}
                 />
                 <label htmlFor="login-password-input">Password</label>
                 <input
@@ -61,6 +68,7 @@ export default function LoginForm({setUserData}) {
                     name="password"
                     value={loginFormData.password}
                     onChange={handleChange}
+                    onKeyDown={keyDownHandler}
                 />
                 <br />
                 <input type="button" value="Join chat!" onClick={login} />

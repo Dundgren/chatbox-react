@@ -1,6 +1,8 @@
 import { useState } from "react";
-import LoginForm from "./components/LoginForm"
-import "./css/app.css"
+import LoginForm from "./components/LoginForm";
+import ChatBox from "./components/ChatBox";
+import "./css/app.css";
+import RegisterForm from "./components/RegisterForm";
 
 function App() {
     // State
@@ -12,9 +14,13 @@ function App() {
     return (
         <div className="main">
             <h1 className="title">ChatBox</h1>
-            <LoginForm
-                setUserData={setUserData}
-            />
+            {!userData.userId &&
+                <>
+                    <LoginForm setUserData={setUserData}/>
+                    <RegisterForm />
+                </>
+            }
+            {userData.userId && <ChatBox />}
         </div>
     );
 }

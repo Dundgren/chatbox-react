@@ -6,13 +6,14 @@ export async function apiRegister(username, password) {
     const data = {
         username: username,
         password: password,
-        age: "",
+        age: 0,
         sex: "",
         location: ""
     };
 
     const result = await axios.post(`${baseUrl}/api/v1/users`, data);
 
+    console.log(result);
 }
 
 export async function apiLogin(username, password) {

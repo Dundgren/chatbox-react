@@ -1,8 +1,9 @@
+import "./css/app.css";
 import { useState } from "react";
 import LoginForm from "./components/LoginForm";
 import ChatBox from "./components/ChatBox";
-import "./css/app.css";
 import RegisterForm from "./components/RegisterForm";
+import IdCard from "./components/IdCard";
 
 function App() {
     // State
@@ -20,7 +21,12 @@ function App() {
                     <RegisterForm />
                 </>
             }
-            {userData.userId && <ChatBox />}
+            {userData.userId && 
+                <>
+                    <IdCard username={userData.username} />
+                    <ChatBox />
+                </>
+            }
         </div>
     );
 }

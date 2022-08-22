@@ -8,7 +8,9 @@ export async function apiSendMessage(userId, message) {
         message: message
     };
 
-    await axios.post(`${baseUrl}/api/v1/messages`, data);
+    const result = await axios.post(`${baseUrl}/api/v1/messages`, data);
+
+    console.log(result);
 }
 
 export async function apiGetMessages() {

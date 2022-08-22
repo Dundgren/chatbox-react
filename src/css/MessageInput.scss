@@ -1,0 +1,24 @@
+.message-input {
+    grid-column: 2 / 22;
+    grid-row: 22 / 24;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    padding: 1em;
+    background-color: #74389d;
+    resize: none;
+    color: #eee;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.send-message-button {
+    grid-column: 22 / 24;
+    grid-row: 22 / 24;
+    width: 100%;
+    background-color: #8f5ab3;
+    border: none;
+    color: #eee;
+}

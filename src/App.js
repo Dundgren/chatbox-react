@@ -25,7 +25,7 @@ function App() {
             {userData.userId && 
                 <>
                     <IdCard username={userData.username} />
-                    <ChatBox />
+                    <ChatBox username={userData.username} />
                     <MessageInput userData={userData} />
                 </>
             }

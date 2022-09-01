@@ -1,16 +1,18 @@
 .register-form {
     grid-column: 10 / 16;
-    grid-row: 11 / 16;
+    grid-row: 11 / 20;
     width: 100%;
     background-color: #631b93;
     display: grid;
     justify-items: center;
     padding: 1em;
 
-    input[type="text"], input[type="password"]{
+    input, select {
         background-color: #74389d;
         color: #eee;
         border: none;
+        padding: 0.2em;
+        margin-bottom: 0.5em;
 
         &:focus {
             outline: none;

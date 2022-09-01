@@ -1,11 +1,11 @@
 export default function LogoutButton({ setUserData }) {
     function handleClick() {
-        setUserData((oldData) => {
-            return {
-                ...oldData,
-                username: "",
-                userId: ""
-            }
+        setUserData({
+            username: "",
+            userId: "",
+            age: "",
+            sex: "",
+            location: ""
         })
     }
 

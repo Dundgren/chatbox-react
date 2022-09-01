@@ -5,6 +5,7 @@ import ChatBox from "./components/ChatBox";
 import RegisterForm from "./components/RegisterForm";
 import IdCard from "./components/IdCard";
 import { MessageInput } from "./components/MessageInput";
+import LogoutButton from "./components/LogoutButton";
 
 function App() {
     // State
@@ -24,6 +25,7 @@ function App() {
             }
             {userData.userId && 
                 <>
+                    <LogoutButton setUserData={setUserData} />
                     <IdCard username={userData.username} />
                     <ChatBox username={userData.username} />
                     <MessageInput userData={userData} />

@@ -1,16 +1,18 @@
 .login-form {
-    grid-column: 10 / 16;
-    grid-row: 5 / 10;
-    width: 100%;
-    background-color: #631b93;
     display: grid;
+    grid-column: 1 / 4;
+    width: 40%;
+    background-color: #631b93;
     justify-items: center;
     padding: 1em;
+    margin: 1em;
 
     input[type="text"], input[type="password"] {
         background-color: #74389d;
         color: #eee;
         border: none;
+        padding: 0.2em;
+        margin-bottom: 1em;
 
         &:focus {
             outline: none;
@@ -24,11 +26,16 @@
     }
 
     h2 {
-        margin: 0;
+        margin: 0 0 1em 0;
     }
 }
 
 .error-message {
-    grid-column: 10 / 16;
-    grid-row: 4 / 5;
+    grid-column: 1 / 4;
+}
+
+@media (max-width: 768px) {
+    .login-form {
+        width: 85%;
+    }
 }

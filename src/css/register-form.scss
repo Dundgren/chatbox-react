@@ -1,18 +1,18 @@
 .register-form {
-    grid-column: 10 / 16;
-    grid-row: 11 / 21;
-    width: 100%;
+    grid-column: 1 / 4;
+    width: 40%;
     background-color: #631b93;
     display: grid;
     justify-items: center;
     padding: 1em;
+    margin: 1em;
 
     input, select {
         background-color: #74389d;
         color: #eee;
         border: none;
         padding: 0.2em;
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
 
         &:focus {
             outline: none;
@@ -26,6 +26,12 @@
     }
 
     h2 {
-        margin: 0;
+        margin: 0 0 1em 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .register-form {
+        width: 85%;
     }
 }

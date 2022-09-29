@@ -26,10 +26,9 @@ export function MessageInput({userData}) {
     }
 
     return (
-        <>
-            <textarea value={message} onChange={handleChange} className="message-input" onKeyDown={keyDownHandler}>
-            </textarea>
-            <input type="button" value="Send" className="send-message-button" onClick={sendMessage} />
-        </>
+        <div className="message-input">
+            <textarea value={message} onChange={handleChange} onKeyDown={keyDownHandler} />
+            <input type="button" value="Send" onClick={sendMessage} />
+        </div>
     )
 }

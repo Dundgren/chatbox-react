@@ -19,24 +19,27 @@ function App() {
     const [errorMessage, setErrorMessage] = useState("");
 
     return (
-        <div className="main">
-            <h1 className="title">ChatBox</h1>
+        <>
             {!userData.userId &&
-                <>
+                <main className="front-page">
+                    <h1 className="title">ChatBox</h1>
                     <p className="error-message">{ errorMessage }</p>
                     <LoginForm setUserData={setUserData} setErrorMessage={setErrorMessage} />
                     <RegisterForm setErrorMessage={setErrorMessage} />
-                </>
+                </main>
             }
             {userData.userId && 
-                <>
-                    <LogoutButton setUserData={setUserData} />
-                    <IdCard userData={userData} />
+                <main className="chat-page">
+                    <header>
+                        <h1 className="title">ChatBox</h1>
+                        <LogoutButton setUserData={setUserData} />
+                        <IdCard userData={userData} />
+                    </header>
                     <ChatBox username={userData.username} />
                     <MessageInput userData={userData} />
-                </>
+                </main>
             }
-        </div>
+        </>
     );
 }
 

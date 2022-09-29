@@ -1,11 +1,10 @@
 .chat-box {
     overflow-y: scroll;
-    grid-column: 2 / 24;
-    grid-row: 5 / 22;
-    width: 100%;
+    width: 95%;
     background-color: #eee;
     background-color: #631b93;
     padding-top: 1em;
+    grid-column: 1 / 4;
 }
 
 .message-right {

@@ -27,21 +27,50 @@ body {
     background-color: #4c1074;
     color: #eee;
     margin: 0;
+    max-height: 100vh;
 }
 
-.main {
+main {
     display: grid;
-    grid-template-columns: repeat(24, 1fr);
-    grid-template-rows: repeat(24, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    grid-auto-rows: min-content;
     height: 100vh;
+}
+
+.chat-page {
+    grid-template-rows: 20% auto 15%;
+}
+
+.front-page {
+    .title {
+        grid-column: 1 / 4;
+    }
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1 / 4;
+    width: 95%;
 
     .title {
         justify-self: center;
         align-self: center;
-        grid-column: 10 / 16;
-        grid-row: 1 / 5;
+        font-size: 3.5em;
     }
 }
 
+@media (max-width: 768px) {
+    main {
+        height: auto;
+    }
 
+    .chat-page {
+        grid-template-rows: auto auto auto;
+
+        .title {
+            grid-column: 1 / 4;
+        }
+    }
+}

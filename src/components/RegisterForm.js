@@ -106,7 +106,6 @@ export default function RegisterForm({ setErrorMessage }) {
                 onChange={handleChange}
                 onKeyDown={keyDownHandler}
             />
-            <br />
             <input type="button" value="Register!"  onClick={register} />
         </div>
     )

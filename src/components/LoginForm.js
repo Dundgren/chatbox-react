@@ -67,7 +67,6 @@ export default function LoginForm({setUserData, setErrorMessage}) {
                 onChange={handleChange}
                 onKeyDown={keyDownHandler}
             />
-            <br />
             <input type="button" value="Join chat!" onClick={login} />
         </div>
     )

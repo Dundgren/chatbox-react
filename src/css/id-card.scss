@@ -1,10 +1,17 @@
 .id-card {
     box-sizing: border-box;
     background-color: #631b93;
-    border-bottom: 1em solid #4c1074;
-    border-top: 1em solid #4c1074;
+    border: 1em solid #4c1074;
+    border-right: 0;
     padding: 0.5em;
-    grid-column: 18 / 24;
-    grid-row: 1 / 5;
     width: 100%;
+    grid-column: 3 / 4;
+}
+
+@media (max-width: 768px) {
+    .id-card {
+        grid-row: 3 / 4;
+        grid-column: 1 / 4;
+        border-left: 0;
+    }
 }

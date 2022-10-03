@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { apiGetMessages } from "../helpers/message";
 
-export default function ChatBox({username}) {
+export default function ChatBox({user}) {
     // State
     const [messages, setMessages] = useState([]);
     const [shouldScrollToBottom, setShouldScrollToBottom] = useState(true);
@@ -47,10 +47,12 @@ export default function ChatBox({username}) {
         }
     });
 
+    console.log(messages)
+
     // Elements
     const messageElements = messages.map(m => {
         return (
-            <div key={m.id} className={username === m.username ? 'message-box message-right' : 'message-box'}>
+            <div key={m.id} className={user === m.user ? 'message-box message-right' : 'message-box'}>
                 <h2>{ m.username } <span className="date-string">{ m.timestamp }</span> </h2>
                 <p>{ m.message }</p>
             </div>

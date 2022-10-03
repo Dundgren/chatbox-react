@@ -12,7 +12,7 @@ export async function apiRegister(username, password, age, sex, location) {
     };
     console.log(data)
 
-    const result = await axios.post(`${baseUrl}/api/v1/users`, data);
+    const result = await axios.post(`${baseUrl}api/v1/users`, data);
 
     console.log(result);
 }
@@ -23,7 +23,7 @@ export async function apiLogin(username, password) {
         password: password
     };
 
-    const result = await axios.post(`${baseUrl}/api/v1/users/login`, data);
+    const result = await axios.post(`${baseUrl}api/v1/users/login`, data);
 
     return result.data;
 }

@@ -35,7 +35,7 @@ function App() {
                         <LogoutButton setUserData={setUserData} />
                         <IdCard userData={userData} />
                     </header>
-                    <ChatBox username={userData.username} />
+                    <ChatBox user={userData.userId} />
                     <MessageInput userData={userData} />
                 </main>
             }

@@ -1,13 +1,18 @@
 import { useEffect, useState, useRef } from "react";
-import { apiGetMessages } from "../helpers/message";
+import { apiGetMessages, apiDeleteMessage } from "../helpers/message";
 
-export default function ChatBox({username}) {
+export default function ChatBox({user}) {
     // State
     const [messages, setMessages] = useState([]);
     const [shouldScrollToBottom, setShouldScrollToBottom] = useState(true);
 
     // Refs
     const chatBoxDiv = useRef(null);
+
+    // Functions
+    async function deleteMessage(messageId) {
+        apiDeleteMessage(messageId);
+    }
 
     // Effects
     useEffect(() => {
@@ -47,11 +52,17 @@ export default function ChatBox({username}) {
         }
     });
 
+    console.log(messages)
+
     // Elements
     const messageElements = messages.map(m => {
         return (
-            <div key={m.id} className={username === m.username ? 'message-box message-right' : 'message-box'}>
-                <h2>{ m.username } <span className="date-string">{ m.timestamp }</span> </h2>
+            <div key={m.id} className={user === m.user ? 'message-box message-right' : 'message-box'}>
+                <h2>
+                    { user === m.user && <span title="Delete message" className="trashcan" onClick={ () => { deleteMessage(m.id) } }>&#128465; </span> }
+                    { m.username } 
+                    <span className="date-string">{ m.timestamp }</span> 
+                </h2>
                 <p>{ m.message }</p>
             </div>
         );

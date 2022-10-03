@@ -18,3 +18,13 @@ export async function apiGetMessages() {
 
     return result;
 }
+
+export async function apiDeleteMessage(messageId) {
+    const data = {
+        messageId: messageId,
+    };
+
+    const result = await axios.post(`${baseUrl}api/v1/messages/delete`, data);
+
+    console.log(result);
+}
